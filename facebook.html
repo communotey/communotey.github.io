@@ -1,0 +1,66 @@
+{% extends "b.html" %}
+
+{% block title %}communote - social document sharing{% end %}
+
+{% block content %}
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '317142065142987',
+      xfbml      : true,
+      version    : 'v2.3'
+    });
+
+    // ADD ADDITIONAL FACEBOOK CODE HERE
+    // Place following code after FB.init call.
+
+function onLogin(response) {
+  if (response.status == 'connected') {
+    FB.api('/me?fields=first_name', function(data) {
+      var welcomeBlock = document.getElementById('fb-welcome');
+      welcomeBlock.innerHTML = 'Hello, ' + data.first_name + '!';
+    });
+  }
+}
+
+FB.getLoginStatus(function(response) {
+  // Check login status on load, and if the user is
+  // already logged in, go directly to the welcome message.
+  if (response.status == 'connected') {
+    onLogin(response);
+  } else {
+    // Otherwise, show Login dialog first.
+    FB.login(function(response) {
+      onLogin(response);
+    }, {scope: 'user_friends, email'});
+  }
+});
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
+
+</script>
+
+<div id="content">
+	<h1 id="fb-welcome" style>communote</h1>
+	<h3>The Library of Everything</h3>
+	<h2>Unlimited Access</h2>
+	<h3>No sign-in necessary, no exclusive content</h2>
+	<h2>Upload Content</h2>
+	<button type="button" id="uploadButton">Upload Files</button>
+	<h3>And get rewarded for it!</h3>
+</div>
+
+<div id="footer">
+	<h1>Advertise | Careers | Contact | Credits | License | Help</h1>
+</div>
+
+{% end %}
