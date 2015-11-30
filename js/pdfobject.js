@@ -264,7 +264,7 @@ var PDF_Object = function (obj) {
 
         if (pluginTypeFound == "html") {
             type = "text/html";
-            url = "pdfjs/web/viewer.html?file="+url + "#zoom=page-width";
+            url = "pdfjs/web/viewer.html?file=../../"+url + "#zoom=page-width";
         }
         else{
             url = url + "#" + buildQueryString(pdfOpenParams)
