@@ -269,7 +269,7 @@ var PDF_Object = function (obj) {
         else{
             url = url + "#" + buildQueryString(pdfOpenParams)
         }
-        targetNode.innerHTML = '<object data="' + url + '" type="' + type + '" width="' + width + '" height="' + height + '"></object>';
+        targetNode.innerHTML = '<object data="' + url + '" type="' + type + '"></object>';
 
         return targetNode.getElementsByTagName("object")[0];
 

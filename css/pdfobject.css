@@ -5,14 +5,19 @@ a:link {
 	COLOR: #218d80 /*The color of the link*/
 }
 
-#pdf {
+
+#pdf-frame {
+	width: 95%;
+	height: 80%;
+	margin: 1em auto;
+	border: 7px solid #6abeb1;
 }
 
-#pdf.embedded {
-	width: 98%;
-	height: 80%;
-	margin: 2em auto;
-	border: 10px solid #6abeb1;
+#pdf {
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	position: relative;
 }
 
 #pdf p {
@@ -20,8 +25,14 @@ a:link {
 }
 
 #pdf object {
-   display: block;
+   /*display: block;*/
    border: solid 1px #666;
+   width: 100%;
+   height: 100%;
+   top: 0;
+   left: 0;
+   position: absolute;
+   /*min-width: 100%;*/
 }
 
 #statement {
