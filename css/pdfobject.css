@@ -52,6 +52,10 @@ a:link {
 	margin-left: 1em;
 }
 
+#disqus_thread {
+	margin: 1em;
+}
+
 .success {
 	border: none;
 	background: none;
