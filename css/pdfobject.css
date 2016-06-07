@@ -53,9 +53,8 @@ a:link {
 }
 
 #disqus_thread {
-	margin-left: 1em;
-	margin-right: 1em;
-	background: #b8c6a5;
+	padding-left: 1em;
+	padding-right: 1em;
 }
 
 .success {
