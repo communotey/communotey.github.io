@@ -1,3 +1,8 @@
+.fa-heart{
+	color: red;
+    text-shadow: 1px 1px 1px red;
+}
+
 .center{
 text-align: center;
 }
